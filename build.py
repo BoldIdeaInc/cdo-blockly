@@ -133,7 +133,7 @@ window.BLOCKLY_BOOT = function() {
 
     provides = []
     for dep in calcdeps.BuildDependenciesFromFiles(self.search_paths):
-      if not dep.filename.startswith(os.pardir + os.sep):  # '../'
+      if not "google-closure-library" in dep.filename:  # '../'
         provides.extend(dep.provides)
     provides.sort()
     f.write('\n')
@@ -199,7 +199,7 @@ class Gen_compressed(threading.Thread):
         [os.path.join("core", "initialization", "blockly.js")])
     for filename in filenames:
       # Filter out the Closure files (the compiler will add them).
-      if filename.startswith(os.pardir + os.sep):  # '../'
+      if "google-closure-library" in filename:  # '../'
         continue
       f = open(filename)
       params.append(("js_code", "".join(f.readlines())))
@@ -435,28 +435,14 @@ class Gen_langfiles(threading.Thread):
 
 if __name__ == "__main__":
   try:
-    calcdeps = import_path(os.path.join(
-        os.path.pardir, "closure-library", "closure", "bin", "calcdeps.py"))
+    calcdeps = import_path(os.path.join("node_modules", "google-closure-library",
+                                        "closure", "bin", "calcdeps.py"))
   except ImportError:
-    if os.path.isdir(os.path.join(os.path.pardir, "closure-library-read-only")):
-      # Dir got renamed when Closure moved from Google Code to GitHub in 2014.
-      print("Error: Closure directory needs to be renamed from"
-            "'closure-library-read-only' to 'closure-library'.\n"
-            "Please rename this directory.")
-    elif os.path.isdir(os.path.join(os.path.pardir, "google-closure-library")):
-      # When Closure is installed by npm, it is named "google-closure-library".
-      #calcdeps = import_path(os.path.join(
-      # os.path.pardir, "google-closure-library", "closure", "bin", "calcdeps.py"))
-      print("Error: Closure directory needs to be renamed from"
-           "'google-closure-library' to 'closure-library'.\n"
-           "Please rename this directory.")
-    else:
-      print("""Error: Closure not found.  Read this:
-https://developers.google.com/blockly/hacking/closure""")
+    print("Error: Closure not found. Run `npm install` first.")
     sys.exit(1)
 
   search_paths = calcdeps.ExpandDirectories(
-      ["core", os.path.join(os.path.pardir, "closure-library")])
+      ["core", os.path.join("node_modules", "google-closure-library")])
 
   # Run both tasks in parallel threads.
   # Uncompressed is limited by processor speed.

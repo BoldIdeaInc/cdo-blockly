@@ -2,7 +2,7 @@
   "name": "cdo-blockly",
   "version": "1.0.0",
   "description": "stand-alone version of code.org's blockly fork",
-  "main": "core/initialization/blockly.js",
+  "main": "index.js",
   "scripts": {
     "build": "python2.7 build.py"
   },

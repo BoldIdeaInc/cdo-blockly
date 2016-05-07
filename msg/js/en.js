@@ -2,9 +2,7 @@
 
 'use strict';
 
-goog.provide('Blockly.Msg.en');
-
-goog.require('Blockly.Msg');
+var Blockly = {}; Blockly.Msg={};  module.exports = function() {
 
 Blockly.Msg.ADD_COMMENT = "Add Comment";
 Blockly.Msg.CHANGE_VALUE_TITLE = "Change value:";
