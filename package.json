@@ -1,0 +1,25 @@
+{
+  "name": "cdo-blockly",
+  "version": "1.0.0",
+  "description": "stand-alone version of code.org's blockly fork",
+  "main": "core/initialization/blockly.js",
+  "scripts": {
+    "build": "python2.7 build.py"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/bendavis78/cdo-blockly.git"
+  },
+  "keywords": [
+    "blockly"
+  ],
+  "author": "Ben Davis <bendavis78@gmail.com> (http://github.com/bendavis78)",
+  "license": "APACHE",
+  "bugs": {
+    "url": "https://github.com/bendavis78/cdo-blockly/issues"
+  },
+  "homepage": "https://github.com/bendavis78/cdo-blockly#readme",
+  "devDependencies": {
+    "google-closure-library": "^20160315.0.0"
+  }
+}
