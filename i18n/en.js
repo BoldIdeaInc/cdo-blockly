@@ -1,10 +1,10 @@
-// This file was automatically generated.  Do not modify.
+var Blockly = {}; Blockly.Msg={};  module.exports = function(){ // This file was automatically generated.  Do not modify.
 
 'use strict';
 
-goog.provide('Blockly.Msg.en');
 
-goog.require('Blockly.Msg');
+
+
 
 Blockly.Msg.ADD_COMMENT = "Add Comment";
 Blockly.Msg.CHANGE_VALUE_TITLE = "Change value:";
@@ -365,4 +365,4 @@ Blockly.Msg.CONTROLS_FOREACH_INPUT_DO = Blockly.Msg.CONTROLS_REPEAT_INPUT_DO;
 Blockly.Msg.CONTROLS_FOR_INPUT_DO = Blockly.Msg.CONTROLS_REPEAT_INPUT_DO;
 Blockly.Msg.VARIABLES_GET_ITEM = Blockly.Msg.VARIABLES_DEFAULT_NAME;
 Blockly.Msg.LISTS_INDEX_OF_INPUT_IN_LIST = Blockly.Msg.LISTS_INLIST;
-Blockly.Msg.LISTS_SET_INDEX_INPUT_IN_LIST = Blockly.Msg.LISTS_INLIST;
+Blockly.Msg.LISTS_SET_INDEX_INPUT_IN_LIST = Blockly.Msg.LISTS_INLIST;return Blockly.Msg;}

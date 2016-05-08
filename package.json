@@ -20,6 +20,12 @@
   },
   "homepage": "https://github.com/bendavis78/cdo-blockly#readme",
   "devDependencies": {
-    "google-closure-library": "^20160315.0.0"
+    "google-closure-library": "^20160315.0.0",
+    "gulp": "^3.9.1",
+    "gulp-insert": "^0.5.0",
+    "gulp-replace": "^0.5.4"
+  },
+  "dependencies": {
+    "xmldom": "^0.1.22"
   }
 }
